@@ -1,3 +1,5 @@
+#SÖZ TUANA KURŞUN
+
 import os
 import requests
 import uuid
