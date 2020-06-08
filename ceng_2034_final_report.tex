@@ -1,0 +1,103 @@
+\documentclass[onecolumn]{article}
+%\usepackage{url}
+%\usepackage{algorithmic}
+\usepackage[a4paper]{geometry}
+\usepackage{datetime}
+\usepackage[margin=2em, font=small,labelfont=it]{caption}
+\usepackage{graphicx}
+\usepackage{mathpazo} % use palatino
+\usepackage[scaled]{helvet} % helvetica
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{subfigure}
+% Letterspacing macros
+\newcommand{\spacecaps}[1]{\textls[200]{\MakeUppercase{#1}}}
+\newcommand{\spacesc}[1]{\textls[50]{\textsc{\MakeLowercase{#1}}}}
+
+\title{\spacecaps{Assignment Report 2: FORK AND MULTIPROCESSING}\\ \normalsize \spacesc{CENG2034, Operating Systems} }
+
+\author{SÖZ TUANA KURŞUN\\soztuanakursun@mu.edu.tr\\https://github.com/soztuanakursun/Ceng\_2034\_2020\_Final}
+%\date{\today\\\currenttime}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In this time, we learned about the fork process in the linux system.So what is this fork? In Linux systems, the fork() function is used to create a new process. This function creates a copy of the process to which it is called and returns a process id. We learned the types of child and parent process and the process that is created in general is called the child process, and the creator is called the parent process.In addition we learned,if the Fork operation fails, it returns -1. When successful, it returns the process ID of the child process. We learned another system call,wait().This function blocks the calling process until one of its child processes exits or a signal is received.In addition, I learned many libraries in Python and their purpose.For example;hashlib,os or uuid.We learned orphan process.Orphan processes are those processes that are still running even though their parent process has terminated or finished.An unintentionally orphaned process is created when its parent process crashes or terminates. Unintentional orphan processes can be avoided using the process group mechanism.Finally, if we have only one child procces, it makes sense to do it with fork;but in many cases we would want to fork many child processes to work in parallel.
+\end{abstract}
+
+
+\section{Introduction}
+The purpose of this laboratory is to in multitasking operating systems, processes need a way to create new processes.For example;Fork helps us to run other programs.If we want a process to start executing a different program, it first forks to create a copy of itself. This allows multitasking to run independently of each other, where they each perform the full memory of the machine as if it were their own.
+\section{Assignments}
+In this experiment, although we learned some of the linux commands and library,we also used them.The following commands are what we use in the experiment.
+
+\subsection{Assignment print("child pid : ", os.getpid())}
+
+We learned how to create child proccess and "0" value is assigned to child process. A value other than “0” is assigned to the parent process.
+
+\begin{figure}[h]
+\centering
+   \includegraphics[scale=1,width=.8\linewidth]{child.png} 
+\caption{\label{fig:demo}
+This is the pid code and creating child process.}
+\end{figure}
+
+\subsection{Assignment("With the child process, download the files via the given URL list")}
+In this assignment, we learned about the uuid library.To download the files in the example, we created an array and downloaded them.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=.9\linewidth]{url.png} 
+\caption{\label{fig:demo}
+}
+\end{figure}
+
+\subsection{Assignment ("Orphan Process")}
+In this assignment,i used the os.wait() so child and parent process functions do not work at the same time.So we don't become orphans.
+
+\begin{figure}[h]
+\centering
+    \includegraphics[scale=1,width=.5\linewidth]{orphan.png} 
+\caption{\label{fig:demo}
+os.wait()
+}
+\end{figure}
+ 
+ \subsection{Assignment("Control duplicate files within the downloaded files of your python code.")}
+ 
+ Finally,I took the hash codes of the photos I downloaded and compared them to each other. If there is a file with the same hash code, that is, a dublicate file.We checked if the checksum array contained this hash code, and then added this hash to the checksum array.
+
+\begin{figure}[h]
+\centering
+ \includegraphics[scale=1,width=0.7\linewidth]{check.png}
+ \caption{\label{fig:demo}
+ Check directory for new downloaded files and calculates checksums}
+ \includegraphics[scale=1]{same.png} 
+  \caption{\label{fig:demo}
+Parent prints out the detected files of same content}
+\end{figure}
+
+
+ 
+\section{Results}
+As a result, we have downloaded 5 files and we have seen repeated files.We have also reviewed these reports with control duplicate files within the multiprocessing techniques.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1,width=.8\linewidth]{result.png} 
+
+\caption{\label{fig:demo}
+}
+
+\end{figure}
+\end{results}
+\newpage
+\section{Conclusion}
+As a result, at the end of this experiment, I learned about the fork process in the linux system,the fork() function is used to create a new process. We learned the types of child and parent process and the process that is created in general is called the child process, and the creator is called the parent process and ı learned how to call it returns the process ID of the child process.We learned another system call,wait().This function blocks the calling process until one of its child processes exits or a signal is received.In addition, I learned many libraries in Python and their purpose.For example;hashlib,os or uuid.We learned orphan process and if we want avoding the orphan process,we will can use wait system call funtion.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
+
